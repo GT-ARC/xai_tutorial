@@ -1,5 +1,6 @@
 [
   {
+    "tag": "homepage",
     "title": "Willkomen zum XAI Tutorial!",
     "description": "Dieses Tutorial ist ein erster Startpunkt, um in das Thema <b>erklärbare Künstliche Intelligenz (XAI)</b> einzusteigen. Das Ziel dieses Tutorials ist es, dein Verständnis für die Erklärung von Künstlicher Intelligenz zu erweitern. </br></br>Wir hoffen, dass du durch die Anleitung lernen wirst, welche <b>rechtlichen und ethischen Aspekte</b> die Erklärbarkeit einer KI-Anwendung abdeckt. Zusätzlich möchten wir dir zeigen, wie eine Erklärung für eigene Zwecke genutzt werden kann, z.B. zur <b>Optimierung deiner KI-Anwendung</b>.",
     "elements": [
@@ -7,6 +8,7 @@
     ]
   },
   {
+    "tag": "startingTips",
     "title": "Hinweise zum Start",
     "description": "Eine KI-Anwendung kann durch eine Vielzahl an Methoden “erklärt” werden. <b>Im Rahmen dieses Tutorials stellen wir zwei der am meisten genutzten Bereiche vor</b>. Du wirst von uns anhand eines Beispiels durch diese Bereiche geleitet. <b>Durch das Beantworten der Fragen im Tutorial stellen Sie sich selbst eine individuelle Erklärung zusammen</b>.",
     "elements": [
@@ -14,6 +16,7 @@
     ]
   },
   {
+    "tag": "toolfinderApp",
     "title": "Die App ToolFinder",
     "description": "Die Digitalisierung und KI kann auch für Handwerker: innen eine wichtige Unterstützung im Arbeitsalltag sein. </br></br>So auch unsere fiktive App ToolFinder die wir uns zu demonstrationszwecken für dieses Tutorial ausgedacht haben. Mit ToolFinder werden Handwerker:innen bei den täglichen Arbeiten unterstützt. Auf Basis von Fotos von Werkzeugen und Baumaterialien gibt ToolFinder hilfreiche Tipps, wie z.B. Anwendungsempfehlungen oder Bauanleitungen.",
     "elements": [
@@ -21,6 +24,7 @@
     ]
   },
   {
+    "tag": "aboutModelCards",
     "title": "Über Model Cards",
     "description": "Eine Möglichkeit KI-Anwendungen zu erklären, sind sogenannte <b>“Model Cards”. Eine Model Card ist wie ein Info-Blatt über eine KI-Anwendung</b>. Auf diesem Blatt stehen technische Details, die normalerweise schwer zu verstehen sind. Du könntest es mit den Nährwertangaben auf Lebensmitteln vergleichen. Genau wie diese Angaben Dir sagen, was in einem Lebensmittel drin ist, sagt Dir eine Model Card, wie die KI funktioniert und was sie kann. </br></br><b>Im Folgenden wirst du nun durch die Kategorien \"1. Anwendungsbereich, 2. Daten, 3. Leistung und 4. Ethik\" geleitet. Für jede Kategorie kannst du verschiedene Fragen beantworten, die am Ende den Inhalt deiner “Nährwertangabe” bestimmen</b>.",
     "elements": [
@@ -124,78 +128,12 @@
     ]
   },
   {
-    "title": "Genug mit der Technik!",
-    "description": "Nachdem wir uns zuvor mit technischen Aspekten der KI-Anwendung befasst haben, wollen wir nun herausfinden, <b>welche Frage eine Erklärung beantworten muss</b>, damit sie Deinen Bedürfnissen entspricht. Markiere auf der nächsten Folie einfach <b>die Fragen, die für Dich wichtig sind, um eine KI-Anwendung zu verstehen.</b>",
-    "elements": []
-  },
-  {
-    "title": "Über Model Erklärung",
-    "description": "Model Cards sind eine tolle Möglichkeit um technische Aspekte einer KI-Anwendung nutzerfreundlich darzustellen. <b>Aber Model Cards können nicht das Ausgabeverhalten von KI-Anwendungen erklären.</b> Dafür braucht es spezielle <b>Erklärungsmethoden für KI, die wie eine Art Dolmetscher:in zwischen KI-Anwendung und Mensch fungieren.</b> Welche Erklärungsmethode zu Dir passt hängt davon welche Frage die Erklärung beantworten soll. In der Literatur werden drei Typen von Fragen unterschieden. Im folgenden kannst du nun auswählen, welche Frage(n) für Dich von Interesse sind.",
-    "elements": [
-      { "type": "image", "id": "about_model_explanation", "target": "/img/about_model_explanation.svg" }
-    ]
-  },
-  {
-    "title": "Fragentyp 1: Wie funktioniert die KI-Anwendung im Allgemeinen?",
-    "description": "Allgemeine Erklärungen von KI-Anwendungen, auch <b>globale Erklärungen</b> genannt, geben Einblick welche allgemeinen Konzepte der Algorithmus lernt um Vorhersagen zu treffen. Unter Konzepten versteht man Ideen, Muster und Merkmale.",
-    "elements": [
-      {
-        "type": "image",
-        "id": "question_types",
-        "target": "/img/question_types1.svg"
-      },
-      {
-        "type": "question",
-        "explanation_scope": "global",
-        "example_target": "/img/tutorial_global_explanation.png"
-      }
-    ]
-  },
-  {
-    "title": "Fragentyp 2: Wie funktioniert die KI-Anwendung im konkreten Fall?",
-    "description": "Erklärungen für spezifische Anwendungsfälle, auch <b>lokale Erklärungen</b> genannt, erklären die Vorhersage des KI-Algorithmus in einzelnen Fällen.",
-    "elements": [
-      {
-        "type": "image",
-        "id": "question_types",
-        "target": "/img/question_types2.svg"
-      },
-      {
-        "type": "question",
-        "explanation_scope": "local",
-        "example_target": "/img/tutorial_local_explanation.png"
-      }
-    ]
-  },
-  {
-    "title": "Fragentyp 3: Ab wann ändert sich die Vorhersage?",
-    "description": "Eine mögliche Vorgehensweise zum Verstehen der KI-Anwendung ist das Betrachten von Grenzfällen. Das heißt was man verändern muss, damit die aktuelle Vorhersage eine andere wird. Diese Vorgehensweise wird <b>kontrafaktische Erklärung</b> genannt.",
-    "elements": [
-      {
-        "type": "image",
-        "id": "question_types",
-        "target": "/img/question_types3.svg"
-      },
-      {
-        "type": "question",
-        "explanation_scope": "counterfactual",
-        "example_target": "/img/tutorial_counterfactual_explanation.png"
-      }
-    ]
-  },
-  {
-    "title": "Geschafft! Was jetzt?",
-    "description": "Wir haben dich anhand eines (selbstgewählten) Beispiels durch die verschiedenen Bereiche der erklärbaren KI geführt. Basierend auf deiner Auswahl haben wir im folgenden einen Prototyp für eine mögliches Erklärbarkeits-Lösung zusammengestellt.",
-    "elements": []
-  },
-  {
-    "tag": "model_card",
+    "tag": "modelCard",
     "title": "Deine persönliche XAI Lösung",
     "description": "",
     "elements": [
       {
         "tag": "application",
-        "tag_index": 4,
         "explanations": [
           {
             "index": 0,
@@ -217,7 +155,6 @@
       },
       {
         "tag": "data",
-        "tag_index": 5,
         "explanations": [
           {
             "index": 0,
@@ -243,7 +180,6 @@
       },
       {
         "tag": "performance",
-        "tag_index": 6,
         "explanations": [
           {
             "index": 0,
@@ -265,7 +201,6 @@
       },
       {
         "tag": "ethics",
-        "tag_index": 7,
         "explanations": [
           {
             "index": 0,
@@ -288,7 +223,78 @@
     ]
   },
   {
-    "tag": "example_card",
+    "tag": "transitionPage1",
+    "title": "Genug mit der Technik!",
+    "description": "Nachdem wir uns zuvor mit technischen Aspekten der KI-Anwendung befasst haben, wollen wir nun herausfinden, <b>welche Frage eine Erklärung beantworten muss</b>, damit sie Deinen Bedürfnissen entspricht. Markiere auf der nächsten Folie einfach <b>die Fragen, die für Dich wichtig sind, um eine KI-Anwendung zu verstehen.</b>",
+    "elements": []
+  },
+  {
+    "tag": "aboutModelExplanation",
+    "title": "Über Model Erklärung",
+    "description": "Model Cards sind eine tolle Möglichkeit um technische Aspekte einer KI-Anwendung nutzerfreundlich darzustellen. <b>Aber Model Cards können nicht das Ausgabeverhalten von KI-Anwendungen erklären.</b> Dafür braucht es spezielle <b>Erklärungsmethoden für KI, die wie eine Art Dolmetscher:in zwischen KI-Anwendung und Mensch fungieren.</b> Welche Erklärungsmethode zu Dir passt hängt davon welche Frage die Erklärung beantworten soll. In der Literatur werden drei Typen von Fragen unterschieden. Im folgenden kannst du nun auswählen, welche Frage(n) für Dich von Interesse sind.",
+    "elements": [
+      { "type": "image", "id": "about_model_explanation", "target": "/img/about_model_explanation.svg" }
+    ]
+  },
+  {
+    "tag": "question1",
+    "title": "Fragentyp 1: Wie funktioniert die KI-Anwendung im Allgemeinen?",
+    "description": "Allgemeine Erklärungen von KI-Anwendungen, auch <b>globale Erklärungen</b> genannt, geben Einblick welche allgemeinen Konzepte der Algorithmus lernt um Vorhersagen zu treffen. Unter Konzepten versteht man Ideen, Muster und Merkmale.",
+    "elements": [
+      {
+        "type": "image",
+        "id": "question_types",
+        "target": "/img/question_types1.svg"
+      },
+      {
+        "type": "question",
+        "explanation_scope": "global",
+        "example_target": "/img/tutorial_global_explanation.png"
+      }
+    ]
+  },
+  {
+    "tag": "question2",
+    "title": "Fragentyp 2: Wie funktioniert die KI-Anwendung im konkreten Fall?",
+    "description": "Erklärungen für spezifische Anwendungsfälle, auch <b>lokale Erklärungen</b> genannt, erklären die Vorhersage des KI-Algorithmus in einzelnen Fällen.",
+    "elements": [
+      {
+        "type": "image",
+        "id": "question_types",
+        "target": "/img/question_types2.svg"
+      },
+      {
+        "type": "question",
+        "explanation_scope": "local",
+        "example_target": "/img/tutorial_local_explanation.png"
+      }
+    ]
+  },
+  {
+    "tag": "question3",
+    "title": "Fragentyp 3: Ab wann ändert sich die Vorhersage?",
+    "description": "Eine mögliche Vorgehensweise zum Verstehen der KI-Anwendung ist das Betrachten von Grenzfällen. Das heißt was man verändern muss, damit die aktuelle Vorhersage eine andere wird. Diese Vorgehensweise wird <b>kontrafaktische Erklärung</b> genannt.",
+    "elements": [
+      {
+        "type": "image",
+        "id": "question_types",
+        "target": "/img/question_types3.svg"
+      },
+      {
+        "type": "question",
+        "explanation_scope": "counterfactual",
+        "example_target": "/img/tutorial_counterfactual_explanation.png"
+      }
+    ]
+  },
+  {
+    "tag": "transitionPage2",
+    "title": "Geschafft! Was jetzt?",
+    "description": "Wir haben dich anhand eines (selbstgewählten) Beispiels durch die verschiedenen Bereiche der erklärbaren KI geführt. Basierend auf deiner Auswahl haben wir im folgenden einen Prototyp für eine mögliches Erklärbarkeits-Lösung zusammengestellt.",
+    "elements": []
+  },
+  {
+    "tag": "exampleCard",
     "title": "Deine persönliche XAI Lösung",
     "description": "",
     "elements": [

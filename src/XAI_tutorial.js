@@ -11,7 +11,7 @@ const Tutorial = (props) => {
     setCurrentIndex(currentIndex - 1);
   };
 
-  const { title, description, elements } = props.data[currentIndex];
+  const { tag, title, description, elements } = props.data[currentIndex];
 
   const [imageExists, setImageExists] = useState(false);
   const [checkboxesExist, setCheckboxesExist] = useState(false);
@@ -39,19 +39,19 @@ const Tutorial = (props) => {
   }, [elements]);
 
   const [selectedOptions, setSelectedOptions] = useState([]);
-  // Application (3rd index), data (4), performance (5), ethics (6)
+  // Application (4rd index), data (5), performance (6), ethics (7)
   
   const handleCheckbox = (questionIndex) => {
 
     const elementExists = selectedOptions.some(item => (
-      item[0] === currentIndex && item[1] === questionIndex
+      item[0] === tag && item[1] === questionIndex
     ));
 
-    const newOption = [currentIndex, questionIndex];
+    const newOption = [tag, questionIndex];
 
     if (elementExists) { // remove from list
       const updatedOptions = selectedOptions.filter(item => (
-        item[0] !== currentIndex || item[1] !== questionIndex
+        item[0] !== tag || item[1] !== questionIndex
       ));
       setSelectedOptions(updatedOptions);
     }
@@ -76,18 +76,18 @@ const Tutorial = (props) => {
     for (let i = 0; i < selectedOptions.length; i++) {
       const option = selectedOptions[i];
 
-      const filteredElement = props.data[14].elements.find((element) => element.tag_index === option[0]);
+      const filteredElement = props.data.find(item => item.tag === "modelCard").elements.find((element) => element.tag === option[0]);
       if (filteredElement) {
         const filteredExp = filteredElement.explanations.filter((explanation) => explanation.index === option[1]);
 
         filteredExp.forEach((explanation) => {
           const newItem = {
-            tag_index: option[0],
+            tag: option[0],
             text: explanation.text
           };
           newFilteredExplanations.push(newItem);
         });
-      } 
+      }
     }
 
     setFilteredExplanations(newFilteredExplanations);
@@ -161,12 +161,12 @@ const Tutorial = (props) => {
                       <div class="table-row">
                         <div class="checkbox-wrapper">
                           <input
-                            id={currentIndex + " " + item2.index}
+                            id={tag + " " + item2.index}
                             type="checkbox"
-                            checked={selectedOptions.some(item => (item[0] === currentIndex && item[1] === item2.index)) ? true : false}
+                            checked={selectedOptions.some(item => (item[0] === tag && item[1] === item2.index)) ? true : false}
                             onChange={() => handleCheckbox(item2.index)}
                           />
-                          <label for={currentIndex + " " + item2.index}></label>
+                          <label for={tag + " " + item2.index}></label>
                         </div>
                       </div>
                     </div>
@@ -206,16 +206,16 @@ const Tutorial = (props) => {
       </div>
 
       <div className="output_parts">
-      {currentIndex === 14 && filteredExplanations.length > 0 && (
+      {tag === "modelCard" && filteredExplanations.length > 0 && (
           <>
             <div className="model_card_container">
               <p className="model_card_title"><b>MODEL CARD</b></p>
                 <div className="cards">
                   
-                  {filteredExplanations.filter(item => item.tag_index === 4).length > 0 && (
+                  {filteredExplanations.filter(item => item.tag === "application").length > 0 && (
                     <div className="model_card_object">
                     <p className="description_yellow"><b><u>Anwendungsbereich</u></b></p>
-                      {filteredExplanations.filter(item => item.tag_index === 4).map((item, index) => (
+                      {filteredExplanations.filter(item => item.tag === "application").map((item, index) => (
                         <div key={index}>
                           <div className="model_card_text"> • {item.text}</div>
                           <br/>
@@ -224,10 +224,10 @@ const Tutorial = (props) => {
                     </div>
                   )}
                   
-                  {filteredExplanations.filter(item => item.tag_index === 5).length > 0 && (
+                  {filteredExplanations.filter(item => item.tag === "data").length > 0 && (
                     <div className="model_card_object">
                     <p className="description_yellow"><b><u>Daten</u></b></p>
-                      {filteredExplanations.filter(item => item.tag_index === 5).map((item, index) => (
+                      {filteredExplanations.filter(item => item.tag === "data").map((item, index) => (
                         <div key={index}>
                           <div className="model_card_text"> • {item.text}</div>
                           <br/>
@@ -236,10 +236,10 @@ const Tutorial = (props) => {
                     </div>
                   )}
                   
-                  {filteredExplanations.filter(item => item.tag_index === 6).length > 0 && (
+                  {filteredExplanations.filter(item => item.tag === "performance").length > 0 && (
                     <div className="model_card_object">
                     <p className="description_yellow"><b><u>Leistung</u></b></p>
-                      {filteredExplanations.filter(item => item.tag_index === 6).map((item, index) => (
+                      {filteredExplanations.filter(item => item.tag === "performance").map((item, index) => (
                         <div key={index}>
                           <div className="model_card_text"> • {item.text}</div>
                           <br/>
@@ -248,10 +248,10 @@ const Tutorial = (props) => {
                     </div>
                   )}
                   
-                  {filteredExplanations.filter(item => item.tag_index === 7).length > 0 && (
+                  {filteredExplanations.filter(item => item.tag === "ethics").length > 0 && (
                     <div className="model_card_object">
                     <p className="description_yellow"><b><u>Ethik</u></b></p>
-                      {filteredExplanations.filter(item => item.tag_index === 7).map((item, index) => (
+                      {filteredExplanations.filter(item => item.tag === "ethics").map((item, index) => (
                         <div key={index}>
                           <div className="model_card_text"> • {item.text}</div>
                           <br/>
@@ -265,7 +265,7 @@ const Tutorial = (props) => {
           </>
         )}
 
-        {currentIndex === 15 && (selectedQuestions.global || selectedQuestions.local || selectedQuestions.counterfactual) && (
+        {tag === "exampleCard" && (selectedQuestions.global || selectedQuestions.local || selectedQuestions.counterfactual) && (
           <div style={{display: "flex", justifyContent: "center"}}>
             <div className="example_card_container">
               <p className="example_card_title"><b>BEISPIELE</b></p>
@@ -274,7 +274,7 @@ const Tutorial = (props) => {
                     <div className="model_card_object">
                       <div className="example_card_text">Global</div>
                         <div className="example_card_info">
-                          <img src={process.env.PUBLIC_URL + props.data[10].elements[1].example_target}/>
+                          <img src={process.env.PUBLIC_URL + props.data.find(item => item.tag === "question1").elements[1].example_target}/>
                           <div className="example_card_text2">{elements.find(item => item.tag === 'global')?.explanation}</div>
                         </div>
                     </div>
@@ -283,7 +283,7 @@ const Tutorial = (props) => {
                     <div className="model_card_object">
                       <div className="example_card_text">Local</div>
                         <div className="example_card_info">
-                          <img src={process.env.PUBLIC_URL + props.data[11].elements[1].example_target}/>
+                          <img src={process.env.PUBLIC_URL + props.data.find(item => item.tag === "question2").elements[1].example_target}/>
                           <div className="example_card_text2">{elements.find(item => item.tag === 'local')?.explanation}</div>
                         </div>
                     </div>
@@ -292,7 +292,7 @@ const Tutorial = (props) => {
                     <div className="model_card_object">
                       <div className="example_card_text">Counterfactual</div>
                         <div className="example_card_info">
-                          <img src={process.env.PUBLIC_URL + props.data[12].elements[1].example_target}/>
+                          <img src={process.env.PUBLIC_URL + props.data.find(item => item.tag === "question3").elements[1].example_target}/>
                           <div className="example_card_text2">{elements.find(item => item.tag === 'counterfactual')?.explanation}</div>
                         </div>
                     </div>
@@ -302,7 +302,6 @@ const Tutorial = (props) => {
           </div>
         )}
       </div>
-      
     </div>
   );
 };
