@@ -11,6 +11,14 @@ const Tutorial = (props) => {
     setCurrentIndex(currentIndex - 1);
   };
 
+  const handleModelCardButton = () => {
+    setCurrentIndex(props.data.findIndex(item =>item.tag==="aboutModelCards"));
+  };
+
+  const handleModelExplanationButton = () => {
+    setCurrentIndex(props.data.findIndex(item =>item.tag==="aboutModelExplanation"));
+  };
+
   const { tag, title, description, elements } = props.data[currentIndex];
 
   const [imageExists, setImageExists] = useState(false);
@@ -264,6 +272,12 @@ const Tutorial = (props) => {
             </div>
           </>
         )}
+        {tag === "modelCard" && filteredExplanations.length === 0 && (
+          <>
+          <p className="description" style={{textAlign: 'center'}}><b>Sie haben keine gültige Wahl getroffen.<br></br><br></br>Bitte treffen Sie Ihre Wahl:</b></p>
+          <button className="button_target_tab" onClick={handleModelCardButton}>Über Model Cards</button>
+          </>
+        )}
 
         {tag === "exampleCard" && (selectedQuestions.global || selectedQuestions.local || selectedQuestions.counterfactual) && (
           <div style={{display: "flex", justifyContent: "center"}}>
@@ -300,6 +314,12 @@ const Tutorial = (props) => {
                 </div>
             </div>
           </div>
+        )}
+        {tag === "exampleCard" && !(selectedQuestions.global && selectedQuestions.local && selectedQuestions.counterfactual) && (
+          <>
+          <p className="description" style={{textAlign: 'center'}}><b>Sie haben keine gültige Wahl getroffen.<br></br><br></br>Bitte treffen Sie Ihre Wahl:</b></p>
+          <button className="button_target_tab" onClick={handleModelExplanationButton}>Über Model Erklärung</button>
+          </>
         )}
       </div>
     </div>

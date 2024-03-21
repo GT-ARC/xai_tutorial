@@ -719,6 +719,21 @@ body {
   transform: translateY(0.3vw);
 }
 
+.button_target_tab {
+  background-color: var(--goki_darkgreen);
+  cursor: pointer;
+  transition: 0.5s;
+  color: white;
+  border-radius: 2vw;
+  font-size: 1.1vw;
+  padding: 0.5vw;
+  margin-left: 44%;
+}
+
+.button_target_tab:hover{
+  transform: translateY(0.3vw);
+}
+
 .close_button_container {
   justify-content: right;
   align-items: right;
