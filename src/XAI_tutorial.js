@@ -3,10 +3,12 @@ import React, { useState, useEffect } from "react";
 const Tutorial = (props) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  // When the "Weiter" button is pressed, it updates the currentIndex value.
   const handleNextButton = () => {
     setCurrentIndex(currentIndex + 1);
   };
 
+  // When the "Zuruck" button is pressed, it updates the currentIndex value.
   const handleBackButton = () => {
     setCurrentIndex(currentIndex - 1);
   };
@@ -31,6 +33,7 @@ const Tutorial = (props) => {
     counterfactual: false,
   });
 
+  // The operations in the useEffect function are executed after each render.
   useEffect(() => {
     const hasImage = elements.some((item) => item.type === "image");
     setImageExists(hasImage);
@@ -47,8 +50,8 @@ const Tutorial = (props) => {
   }, [elements]);
 
   const [selectedOptions, setSelectedOptions] = useState([]);
-  // Application (4rd index), data (5), performance (6), ethics (7)
   
+  // It is called when checkboxes are selected or deselected.
   const handleCheckbox = (questionIndex) => {
 
     const elementExists = selectedOptions.some(item => (
@@ -78,6 +81,7 @@ const Tutorial = (props) => {
 
   const [filteredExplanations, setFilteredExplanations] = useState([]);
 
+  // filteredExplanations stores filtered explanations according to the selections made.
   useEffect(() => {
     const newFilteredExplanations = [];
 
