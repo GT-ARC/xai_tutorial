@@ -1,0 +1,1 @@
+While working on the main branch, the React JS application is converted into a format suitable for publishing as a Github page with the "npm run deploy" command and the relevant codes are found in the "gh-pages" branch. The files in the "gh-pages" branch are transferred to the "xai_tutorial" file in the "go-ki-demo" branch.
